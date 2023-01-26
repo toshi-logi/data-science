@@ -1,0 +1,12 @@
+library(ggplot2)
+
+# 散布図の作成（データ：Salesの場合）
+g<- ggplot(Sales, aes(x=toothpicks, y=beers))
+g <- g + geom_point()
+g
+
+# 相関係数の算出
+cor(Sales$toothpicks, Sales$beers, method="pearson")
+
+# 無相関検定
+cor.test(Sales$toothpicks, Sales$beers, method="pearson")
